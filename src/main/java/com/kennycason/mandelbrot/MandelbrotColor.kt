@@ -32,33 +32,33 @@ class MandelbrotColor {
     // val colors = IntArray(max, {i -> Color.HSBtoRGB(i / 256f, i / 8f, i / (i + 8f) ) })
 
     fun run() {
-//        val frame = JFrame()
-//        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)
-//        frame.setSize(width, height + 18)
-//        frame.setVisible(true)
-//
-//        val panel = object: JPanel() {
-//            override fun paintComponent(graphics: Graphics) {
-//                super.paintComponent(graphics)
-//
-//                graphics.drawImage(canvas, 0, 0, width, height, null)
-//            }
-//
-//        }
-//        frame.add(panel)
-//        panel.revalidate()
+        val frame = JFrame()
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)
+        frame.setSize(width, height + 18)
+        frame.setVisible(true)
 
-        drawManderbolt(max)
-     //   panel.repaint()
-        println("done")
-        ImageIO.write(canvas, "png", File("output/mandelbrot_color_very_large.png"))
-//        (0 .. max).forEach { max ->
-//            drawManderbolt(max)
-//            Thread.sleep(100)
-//            panel.repaint()
-//            println(max)
-//           // ImageIO.write(canvas, "png", File("output/iteration_color_$max.png"))
-//        }
+        val panel = object: JPanel() {
+            override fun paintComponent(graphics: Graphics) {
+                super.paintComponent(graphics)
+
+                graphics.drawImage(canvas, 0, 0, width, height, null)
+            }
+
+        }
+        frame.add(panel)
+        panel.revalidate()
+
+      //  drawManderbolt(max)
+      //  panel.repaint()
+      //  ImageIO.write(canvas, "png", File("output/mandelbrot_color_very_large.png"))
+
+        (0 .. max).forEach { max ->
+            drawManderbolt(max)
+            Thread.sleep(100)
+            panel.repaint()
+            println(max)
+           // ImageIO.write(canvas, "png", File("output/iteration_color_$max.png"))
+        }
     }
 
 
